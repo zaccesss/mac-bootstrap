@@ -85,7 +85,15 @@ BOOTSTRAP_GITHUB_USER=<your GitHub user> ./mac-bootstrap/bootstrap/bootstrap.sh
 | [Settings](docs/settings.md) | Where the settings live and how they are captured and applied |
 | [New Mac checklist](docs/new-mac.md) | Everything to do on a new Mac, including what the bootstrap cannot do |
 
-Linux on a Mac is covered by [linux-bootstrap](https://github.com/zaccesss/linux-bootstrap).
+## Other platforms
+
+| Platform | Repository |
+| --- | --- |
+| macOS | [mac-bootstrap](https://github.com/zaccesss/mac-bootstrap) |
+| Ubuntu, including WSL2 and VMs | [linux-bootstrap](https://github.com/zaccesss/linux-bootstrap) |
+| Windows 11 | [windows-bootstrap](https://github.com/zaccesss/windows-bootstrap) |
+
+All three use the same public dotfiles and config repositories.
 
 ## Development
 
