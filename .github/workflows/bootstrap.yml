@@ -1,0 +1,39 @@
+name: Bootstrap
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  merge_group:
+
+permissions:
+  contents: read
+
+jobs:
+  # runs on a real macOS runner with its stock bash 3.2, the same bash a brand-new Mac has before
+  # Homebrew installs anything, so a bash 4 feature slipping in fails here
+  tests:
+    name: Tests (macOS)
+    runs-on: macos-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Check Bash syntax with the stock bash
+        run: |
+          set -euo pipefail
+          /bin/bash --version | head -1
+          for file in bootstrap/bootstrap.sh bootstrap/lib/*.sh bootstrap/stages/*.sh tests/*.sh; do
+            /bin/bash -n "$file"
+          done
+
+      - name: Run ShellCheck
+        run: |
+          brew list shellcheck >/dev/null 2>&1 || brew install shellcheck
+          shellcheck -x bootstrap/bootstrap.sh bootstrap/lib/*.sh bootstrap/stages/*.sh tests/*.sh
+
+      - name: Run bootstrap tests
+        run: /bin/bash tests/bootstrap-test.sh
