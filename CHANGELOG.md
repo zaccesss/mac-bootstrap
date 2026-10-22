@@ -4,6 +4,8 @@ All notable changes to this project are documented here.
 
 ## Unreleased
 
+## 0.0.1 - 2026-10-22
+
 ### Added
 
 - The README links the bootstraps for the other platforms.
