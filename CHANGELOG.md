@@ -4,6 +4,12 @@ All notable changes to this project are documented here.
 
 ## Unreleased
 
+## 0.1.0 - 2026-11-03
+
+### Changed
+
+- Routine tidy-up
+
 ## 0.0.1 - 2026-10-22
 
 ### Added
